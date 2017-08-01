@@ -48,6 +48,9 @@ sc_X = StandardScaler()
 # do we have to aplpy scaling for dependent variable
 # no, since this is a classification problem, we dont have to
 # for regression, the DV scales vastly, then we need scaling
+# we dont need to add fit to X_test because for the object sc_X we already fit it using X_train
+# for dependent variable y, we will use a new object for standardScaler()
+
 X_train = sc_X.fit_transform(X_train)
 X_test = sc_X.transform(X_test)
 sc_y = StandardScaler()

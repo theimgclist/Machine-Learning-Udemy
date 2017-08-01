@@ -29,6 +29,7 @@ onehotencoder = OneHotEncoder(categorical_features = [0])
 
 X = onehotencoder.fit_transform(X).toarray()
 # Encoding the Dependent Variable
+# since we used labelencode_X for fitting X variable, we need a new one for y
 # since it is a dependent variable, the LabelEncoder knows its a category and hence doesnt put any ordering into it
 # so we dont need OneHotEncoder here
 labelencoder_y = LabelEncoder()
