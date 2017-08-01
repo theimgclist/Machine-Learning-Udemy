@@ -91,6 +91,9 @@ plt.show()
 # the polynomial regression gives a far better result than that of linear
 # we started with degree 2, by changing that to 3 we wil get better results
 # by changing it to 4, we get a line that goes through all points
+# for the predict function below, we used the polynomial object, since it is required for the polynomial regression
+# though we have X_poly variable which is equal to the value passed for predict,
+# we have again specified it so that the updated X content will be taken
 
 plt.scatter(X, y, color = 'red')
 plt.plot(X, lin_reg_2.predict(poly_reg.fit_transform(X)), color = 'blue')
@@ -103,7 +106,7 @@ plt.show()
 # the above plot gives us accurate results
 # but the curve draws straight lines between points
 # we can change that to curved lines by using X_grid
-# here we arrange X values from min to max with increment of 0.1
+# here we arrange X values from min to max with increment of 0.1 or 0.01 for even better graph
 
 X_grid = np.arange(min(X), max(X), 0.1)
 X_grid = X_grid.reshape((len(X_grid), 1))
